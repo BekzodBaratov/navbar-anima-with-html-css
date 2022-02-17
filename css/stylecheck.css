@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.navigation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 40rem;
+  height: 7rem;
+  border-radius: 1rem;
+}
+.navigation .list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 7rem;
+}
+.navigation .list input {
+  /* display: none; */
+  cursor: pointer;
+}
+.navigation .list label {
+  font-size: 2rem;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+.navigation .list span {
+  position: absolute;
+  transform: translateY(3rem);
+  opacity: 0;
+}
+.navigation .indicator {
+  position: absolute;
+  top: -50%;
+  left: 0rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background-color: #12bf12;
+  transform: translateX(2.5rem);
+  border: 1rem solid #444;
+  transition: 0.5s linear;
+}
+.navigation .indicator::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 50%;
+  left: -52%;
+  background-color: white;
+  border-top-right-radius: 100%;
+  box-shadow: 0 -1rem #444;
+  transition: 0.3s ease-out;
+}
+.navigation .indicator::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 50%;
+  right: -52%;
+  background-color: white;
+  border-top-left-radius: 100%;
+  box-shadow: 0 -1rem #444;
+}
+
+#con-1:checked ~ label {
+  transform: translateY(-3.2rem);
+}
+#con-2:checked ~ label {
+  transform: translateY(-3.2rem);
+}
+#con-1:checked ~ .indicator {
+  transform: translateX(calc(2.5rem + 7rem * 0));
+}
+#con-2:checked ~ .indicator {
+  transform: translateX(calc(2.5rem + 7rem * 1));
+}
+#con-3:checked ~ .indicator {
+  transform: translateX(calc(2.5rem + 7rem * 2));
+}
+#con-4:checked ~ .indicator {
+  transform: translateX(calc(2.5rem + 7rem * 3));
+}
+#con-5:checked ~ .indicator {
+  transform: translateX(calc(2.5rem + 7rem * 4));
+}
+
+/* .con1:checked ~ .indicator */

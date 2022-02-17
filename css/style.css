@@ -1,0 +1,123 @@
+* {
+  font-family: roboto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.navigation {
+  background-color: #fff;
+  width: 40rem;
+  height: 7rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+.navigation ul {
+  display: flex;
+  width: 35rem;
+}
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 7rem;
+  height: 7rem;
+  z-index: 1;
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 500;
+  text-decoration: none;
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 7.5rem;
+  font-size: 3rem;
+  text-align: center;
+  transition: 0.5s;
+  color: #444;
+}
+.navigation ul li:hover .icon {
+  transform: translateY(-3.2rem);
+}
+.navigation ul li .txt {
+  position: absolute;
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(2rem);
+}
+.navigation ul li:hover .txt {
+  opacity: 1;
+  transform: translateY(1rem);
+}
+.circle {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background-color: #11b811;
+  border-radius: 50%;
+  border: 6px solid #444;
+  top: -3.5rem;
+  transition: 0.5s;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 22px;
+  height: 25px;
+  background-color: #fff;
+  top: 50%;
+  left: -39%;
+  border-top-right-radius: 50px;
+  box-shadow: 0 -1rem 0 #444;
+}
+.circle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 22px;
+  height: 25px;
+  background-color: #fff;
+  top: 50%;
+  right: -40%;
+  border-top-left-radius: 50px;
+  box-shadow: 0 -1rem 0 #444;
+}
+
+.navigation ul li:nth-child(1):hover ~ .circle {
+  transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2):hover ~ .circle {
+  transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3):hover ~ .circle {
+  transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4):hover ~ .circle {
+  transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5):hover ~ .circle {
+  transform: translateX(calc(70px * 4));
+}
